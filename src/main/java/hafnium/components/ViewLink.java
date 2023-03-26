@@ -18,10 +18,15 @@ public class ViewLink extends NGComponent {
 		super( context );
 	}
 
+	@Override
+	public boolean synchronizesVariablesWithBindings() {
+		return false;
+	}
+
 	/**
 	 * Disable the link if the object is null.
 	 */
-	public boolean disabled() {
+	public Boolean disabled() {
 
 		if( object() == null ) {
 			return true;
@@ -32,7 +37,8 @@ public class ViewLink extends NGComponent {
 			return true;
 		}
 
-		return (Boolean)valueForBinding( "disabled" );
+		final Boolean value = (Boolean)valueForBinding( "disabled" );
+		return value != null && value;
 	}
 
 	private boolean isNewPersistentObject() {
@@ -50,15 +56,17 @@ public class ViewLink extends NGComponent {
 	 * @return The URL for the link.
 	 */
 	public String href() {
-
+		System.out.println( 1 );
 		if( object() == null ) {
 			return null;
 		}
 
+		System.out.println( 2 );
 		if( isNewPersistentObject() ) {
 			return null;
 		}
 
+		System.out.println( 3 );
 		return URLProviders.urlForObject( object() );
 	}
 
