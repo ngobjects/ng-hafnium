@@ -56,17 +56,14 @@ public class ViewLink extends NGComponent {
 	 * @return The URL for the link.
 	 */
 	public String href() {
-		System.out.println( 1 );
 		if( object() == null ) {
 			return null;
 		}
 
-		System.out.println( 2 );
 		if( isNewPersistentObject() ) {
 			return null;
 		}
 
-		System.out.println( 3 );
 		return URLProviders.urlForObject( object() );
 	}
 
