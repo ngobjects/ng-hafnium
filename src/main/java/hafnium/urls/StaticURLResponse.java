@@ -23,7 +23,7 @@ public class StaticURLResponse implements NGActionResults {
 		return redirectTemporary( _urlString );
 	}
 
-	private NGResponse redirectTemporary( final String targetURL ) {
+	public static NGResponse redirectTemporary( final String targetURL ) {
 		final NGResponse response = new NGResponse();
 
 		response.setHeader( targetURL, "location" );
@@ -33,5 +33,4 @@ public class StaticURLResponse implements NGActionResults {
 
 		return response;
 	}
-
 }
