@@ -26,10 +26,10 @@ public class StaticURLResponse implements NGActionResults {
 	public static NGResponse redirectTemporary( final String targetURL ) {
 		final NGResponse response = new NGResponse();
 
-		response.setHeader( targetURL, "location" );
+		response.setHeader( "location", targetURL );
 		response.setStatus( 302 );
-		response.setHeader( "text/html", "content-type" );
-		response.setHeader( "0", "content-length" );
+		response.setHeader( "content-type", "text/html" );
+		response.setHeader( "content-length", "0" );
 
 		return response;
 	}
