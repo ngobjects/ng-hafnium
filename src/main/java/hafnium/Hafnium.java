@@ -10,8 +10,15 @@ import hafnium.components.USViewPageGeneric;
 import hafnium.components.USViewWrapper;
 import hafnium.components.ViewLink;
 import ng.appserver.templating.NGElementUtils;
+import ng.plugins.NGPlugin;
 
-public class Hafnium {
+public class Hafnium extends NGPlugin {
+
+	@Override
+	public void load() {
+		System.out.println( "Loading HAFNIUM!" );
+		registerComponents();
+	}
 
 	public static void registerComponents() {
 		NGElementUtils.addClass( USBaseComponent.class );
