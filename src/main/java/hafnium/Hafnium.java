@@ -9,6 +9,7 @@ import hafnium.components.USViewPage;
 import hafnium.components.USViewPageGeneric;
 import hafnium.components.USViewWrapper;
 import hafnium.components.ViewLink;
+import hafnium.urls.ObjectRouteHandler;
 import ng.appserver.NGApplication;
 import ng.appserver.templating.NGElementUtils;
 import ng.plugins.NGPlugin;
@@ -18,6 +19,7 @@ public class Hafnium extends NGPlugin {
 	@Override
 	public void load( NGApplication application ) {
 		registerComponents();
+		application.routeTable().map( "/i/", new ObjectRouteHandler() );
 	}
 
 	public static void registerComponents() {
