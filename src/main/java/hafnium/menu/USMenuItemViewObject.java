@@ -3,10 +3,12 @@ package hafnium.menu;
 import org.apache.cayenne.DataObject;
 
 import hafnium.urls.HasSelectedObjectPage;
+import hafnium.urls.Inspection;
 import hafnium.urls.URLProviders;
 import ng.appserver.NGActionResults;
+import ng.appserver.NGContext;
 
-public class USMenuItemViewObject extends USMenuItem {
+public class USMenuItemViewObject extends USMenuItem implements USInvokesActionInContext {
 
 	private DataObject _object;
 	private Class<? extends HasSelectedObjectPage> _viewComponentClass;
@@ -37,12 +39,7 @@ public class USMenuItemViewObject extends USMenuItem {
 	 */
 	@Override
 	public NGActionResults action() {
-		throw new RuntimeException( "FIXME: Missing context" );
-		//		if( _viewComponentClass != null ) {
-		//			return Inspection.inspectObjectInContextUsingComponent( object(), ERXWOContext.currentContext(), _viewComponentClass );
-		//		}
-		//
-		//		return Inspection.inspectObjectInContext( object(), ERXWOContext.currentContext() );
+		throw new RuntimeException( "Bla" );
 	}
 
 	@Override
@@ -52,5 +49,14 @@ public class USMenuItemViewObject extends USMenuItem {
 		}
 
 		return URLProviders.urlForObject( object() );
+	}
+
+	@Override
+	public NGActionResults invokeActionInContext( NGContext context ) {
+		if( _viewComponentClass != null ) {
+			return Inspection.inspectObjectInContextUsingComponent( object(), context, _viewComponentClass );
+		}
+
+		return Inspection.inspectObjectInContext( object(), context );
 	}
 }
