@@ -28,7 +28,13 @@ public class USViewWrapper extends USViewPage {
 	}
 
 	public String viewToolsComponentName() {
-		return USBaseViewTools.class.getSimpleName();
+		final String name = application().properties().get( "concept.viewToolsComponentName" );
+
+		if( name == null ) {
+			return USBaseViewTools.class.getSimpleName();
+		}
+
+		return name;
 	}
 
 	@Override
