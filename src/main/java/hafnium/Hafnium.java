@@ -19,7 +19,7 @@ public class Hafnium extends NGPlugin {
 	@Override
 	public void load( NGApplication application ) {
 		registerComponents();
-		application.routeTable().map( "/i/", new ObjectRouteHandler() );
+		application.routeTable().map( "/i/*", new ObjectRouteHandler() );
 	}
 
 	public static void registerComponents() {
