@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
-import org.apache.cayenne.DataObject;
+import org.apache.cayenne.PersistentObject;
 import org.apache.cayenne.map.ObjAttribute;
 import org.apache.cayenne.map.ObjEntity;
 import org.apache.cayenne.map.ObjRelationship;
@@ -26,12 +26,12 @@ import ng.kvc.NGKeyValueCoding;
  * Generic object edit page.
  */
 
-public class USViewPageGeneric<E extends DataObject> extends USViewPage<E> {
+public class USViewPageGeneric<E extends PersistentObject> extends USViewPage<E> {
 
 	public ObjAttribute currentAttribute;
 	public ObjRelationship currentRelationship;
 	public String filename;
-	public DataObject currentObject;
+	public PersistentObject currentObject;
 
 	public USViewPageGeneric( NGContext context ) {
 		super( context );

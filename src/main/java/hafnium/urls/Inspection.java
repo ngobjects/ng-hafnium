@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.BiFunction;
 
-import org.apache.cayenne.DataObject;
+import org.apache.cayenne.PersistentObject;
 
 import hafnium.components.USEditPageGeneric;
 import hafnium.components.USEditWrapper;
@@ -26,7 +26,7 @@ public class Inspection {
 			return _inspectionRoutes;
 		}
 
-		public static void add( Class entityClass, String urlPrefix, BiFunction<DataObject, NGContext, NGActionResults> viewFunction ) {
+		public static void add( Class entityClass, String urlPrefix, BiFunction<PersistentObject, NGContext, NGActionResults> viewFunction ) {
 			final InspectionRoute ir = new InspectionRoute();
 			ir.setEntityClass( entityClass );
 			ir.setUrlPrefix( urlPrefix );
@@ -58,7 +58,7 @@ public class Inspection {
 		/**
 		 * Class of component used to view objects if this type.
 		 */
-		private BiFunction<DataObject, NGContext, NGActionResults> _viewFunction;
+		private BiFunction<PersistentObject, NGContext, NGActionResults> _viewFunction;
 
 		/**
 		 * Class of component used to edit objects if this type.
@@ -132,7 +132,7 @@ public class Inspection {
 		final InspectionRoute ir = InspectionRoute.inspectionRoutes().get( object.getClass() );
 
 		if( ir._viewFunction != null ) {
-			return ir._viewFunction.apply( (DataObject)object, context );
+			return ir._viewFunction.apply( (PersistentObject)object, context );
 		}
 
 		final Class<? extends HasSelectedObjectPage> componentClass = ir.viewComponentClass();
@@ -209,7 +209,7 @@ public class Inspection {
 	public static NGActionResults editObjectInContextUsingGenericComponent( Object selectedObject, NGContext context ) {
 		Class<? extends HasSelectedObjectPage> pageClass = null;
 
-		if( selectedObject instanceof DataObject ) {
+		if( selectedObject instanceof PersistentObject ) {
 			pageClass = USEditPageGeneric.class;
 		}
 
@@ -219,7 +219,7 @@ public class Inspection {
 	public static NGActionResults inspectObjectInContextUsingGenericComponent( Object selectedObject, NGContext context ) {
 		Class<? extends HasSelectedObjectPage> pageClass = null;
 
-		if( selectedObject instanceof DataObject ) {
+		if( selectedObject instanceof PersistentObject ) {
 			pageClass = USViewPageGeneric.class;
 		}
 

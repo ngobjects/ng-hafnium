@@ -1,7 +1,7 @@
 package hafnium.components;
 
-import org.apache.cayenne.DataObject;
 import org.apache.cayenne.ObjectContext;
+import org.apache.cayenne.PersistentObject;
 
 import hafnium.urls.HasSelectedObjectPage;
 import jambalaya.Jambalaya;
@@ -50,12 +50,12 @@ public abstract class USViewPage<E> extends USBaseComponent implements HasSelect
 	}
 
 	public NGActionResults saveChanges() {
-		((DataObject)selectedObject()).getObjectContext().commitChanges();
+		((PersistentObject)selectedObject()).getObjectContext().commitChanges();
 		return null;
 	}
 
 	public NGActionResults deleteObject() {
-		((DataObject)selectedObject()).getObjectContext().deleteObject( selectedObject() );
+		((PersistentObject)selectedObject()).getObjectContext().deleteObject( selectedObject() );
 		saveChanges();
 		return returnToCallingComponent();
 	}
@@ -71,7 +71,7 @@ public abstract class USViewPage<E> extends USBaseComponent implements HasSelect
 	protected ObjectContext oc() {
 		if( _oc == null ) {
 			if( selectedObject() != null ) {
-				_oc = ((DataObject)selectedObject()).getObjectContext();
+				_oc = ((PersistentObject)selectedObject()).getObjectContext();
 			}
 			else {
 				_oc = Jambalaya.newContext();
