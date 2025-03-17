@@ -1,7 +1,6 @@
 package hafnium.components;
 
 import is.rebbi.core.util.StringUtilities;
-import ng.appserver.NGApplication;
 import ng.appserver.NGComponent;
 import ng.appserver.NGContext;
 
@@ -46,13 +45,13 @@ public abstract class USBaseComponent extends NGComponent {
 	 * @return Name of component to wrap around content when viewing objects.
 	 */
 	public String lookName() {
-		return NGApplication.application().properties().get( "hafnium.defaultLookName" );
+		return application().properties().get( "hafnium.defaultLookName" );
 	}
 
 	/**
 	 * @return Name of component to wrap around content when editing objects.
 	 */
 	public String editLookName() {
-		return NGApplication.application().properties().get( "hafnium.editLookName" );
+		return application().properties().get( "hafnium.editLookName" );
 	}
 }
