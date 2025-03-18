@@ -1,7 +1,7 @@
 package hafnium.menu;
 
 import ng.appserver.NGActionResults;
-import ng.appserver.NGComponent;
+import ng.appserver.templating.NGComponent;
 
 public class USMenuItemPage extends USMenuItem {
 
