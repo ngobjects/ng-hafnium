@@ -1,8 +1,8 @@
 package hafnium.components;
 
 import is.rebbi.core.util.StringUtilities;
-import ng.appserver.NGComponent;
 import ng.appserver.NGContext;
+import ng.appserver.templating.NGComponent;
 
 public abstract class USBaseComponent extends NGComponent {
 

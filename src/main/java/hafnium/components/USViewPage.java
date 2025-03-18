@@ -7,8 +7,8 @@ import hafnium.urls.HasSelectedObjectPage;
 import jambalaya.Jambalaya;
 import jambalaya.definitions.EntityDefinition;
 import ng.appserver.NGActionResults;
-import ng.appserver.NGComponent;
 import ng.appserver.NGContext;
+import ng.appserver.templating.NGComponent;
 
 /**
  * Common functionality for client and admin side components.

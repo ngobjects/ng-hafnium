@@ -3,8 +3,8 @@ package hafnium.components;
 import org.apache.cayenne.Persistent;
 
 import hafnium.urls.URLProviders;
-import ng.appserver.NGComponent;
 import ng.appserver.NGContext;
+import ng.appserver.templating.NGComponent;
 
 /**
  * Link to view objects.
