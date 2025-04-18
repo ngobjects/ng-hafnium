@@ -11,25 +11,28 @@ import hafnium.components.USViewWrapper;
 import hafnium.components.ViewLink;
 import hafnium.urls.ObjectRouteHandler;
 import ng.appserver.NGApplication;
+import ng.plugins.Elements;
 import ng.plugins.NGPlugin;
 
-public class Hafnium extends NGPlugin {
+public class Hafnium implements NGPlugin {
 
 	@Override
 	public void load( NGApplication application ) {
-		registerComponents( application );
 		application.routeTable().map( "/i/*", new ObjectRouteHandler() );
 	}
 
-	public static void registerComponents( NGApplication application ) {
-		application.elementManager().registerElementClass( USBaseComponent.class );
-		application.elementManager().registerElementClass( USBaseViewTools.class );
-		application.elementManager().registerElementClass( USEditPageGeneric.class );
-		application.elementManager().registerElementClass( USEditWrapper.class );
-		application.elementManager().registerElementClass( USListPageEdit.class );
-		application.elementManager().registerElementClass( USViewPage.class );
-		application.elementManager().registerElementClass( USViewPageGeneric.class );
-		application.elementManager().registerElementClass( USViewWrapper.class );
-		application.elementManager().registerElementClass( ViewLink.class );
+	@Override
+	public Elements elements() {
+		return Elements
+				.create()
+				.elementClass( USBaseComponent.class )
+				.elementClass( USBaseViewTools.class )
+				.elementClass( USEditPageGeneric.class )
+				.elementClass( USEditWrapper.class )
+				.elementClass( USListPageEdit.class )
+				.elementClass( USViewPage.class )
+				.elementClass( USViewPageGeneric.class )
+				.elementClass( USViewWrapper.class )
+				.elementClass( ViewLink.class );
 	}
 }
