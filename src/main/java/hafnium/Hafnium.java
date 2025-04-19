@@ -10,16 +10,11 @@ import hafnium.components.USViewPageGeneric;
 import hafnium.components.USViewWrapper;
 import hafnium.components.ViewLink;
 import hafnium.urls.ObjectRouteHandler;
-import ng.appserver.NGApplication;
 import ng.plugins.Elements;
 import ng.plugins.NGPlugin;
+import ng.plugins.Routes;
 
 public class Hafnium implements NGPlugin {
-
-	@Override
-	public void load( NGApplication application ) {
-		application.routeTable().map( "/i/*", new ObjectRouteHandler() );
-	}
 
 	@Override
 	public Elements elements() {
@@ -34,5 +29,12 @@ public class Hafnium implements NGPlugin {
 				.elementClass( USViewPageGeneric.class )
 				.elementClass( USViewWrapper.class )
 				.elementClass( ViewLink.class );
+	}
+
+	@Override
+	public Routes routes() {
+		return Routes
+				.create()
+				.map( "/i/*", new ObjectRouteHandler() );
 	}
 }
