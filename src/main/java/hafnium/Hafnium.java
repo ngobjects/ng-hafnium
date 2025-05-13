@@ -5,6 +5,7 @@ import hafnium.components.USBaseViewTools;
 import hafnium.components.USEditPageGeneric;
 import hafnium.components.USEditWrapper;
 import hafnium.components.USListPageEdit;
+import hafnium.components.USViewLook;
 import hafnium.components.USViewPage;
 import hafnium.components.USViewPageGeneric;
 import hafnium.components.USViewWrapper;
@@ -27,6 +28,7 @@ public class Hafnium implements NGPlugin {
 				.elementClass( USListPageEdit.class )
 				.elementClass( USViewPage.class )
 				.elementClass( USViewPageGeneric.class )
+				.elementClass( USViewLook.class )
 				.elementClass( USViewWrapper.class )
 				.elementClass( ViewLink.class );
 	}
