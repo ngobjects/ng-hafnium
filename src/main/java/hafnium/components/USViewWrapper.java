@@ -28,7 +28,7 @@ public class USViewWrapper extends USViewPage {
 	}
 
 	public String viewToolsComponentName() {
-		final String name = application().properties().get( "concept.viewToolsComponentName" );
+		final String name = application().properties().get( "hafnium.viewToolsComponentName" );
 
 		if( name == null ) {
 			return USBaseViewTools.class.getSimpleName();
