@@ -16,6 +16,6 @@
 <wo:repetition list="$relationships" item="$currentRelationship">
 	<div class="form-group mb-3">
 		<label class="form-label"><wo:str value="$currentRelationship.name" /></label>
-		<div class="text-muted">[Relationship editing not yet implemented]</div>
+		<wo:USRelationship object="$selectedObject" key="$currentRelationship.name" />
 	</div>
 </wo:repetition>
