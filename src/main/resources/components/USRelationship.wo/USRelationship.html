@@ -1,0 +1,6 @@
+<wo:if condition="$relationship.isToMany" negate="$true">
+	<wo:USToOneRelationship object="$object" key="$key" disableObjectSelection="$disableObjectSelection" />
+</wo:if>
+<wo:if condition="$relationship.isToMany">
+	<wo:USToManyRelationship object="$object" key="$key" disableObjectSelection="$disableObjectSelection" />
+</wo:if>

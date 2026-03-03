@@ -51,7 +51,7 @@ public class USMenu {
 		addChild( systemMenuItem() );
 	}
 
-	private static USMenuItem systemMenuItem() {
+	public static USMenuItem systemMenuItem() {
 		final USMenuItem mi = USMenuItemContainer.create( "Kerfi", "fa fa-wrench sidebar-nav-icon" );
 		//		mi.addChild( USMenuItemPage.create( "Aðgerðir", null, USTaskRunnerPage.class ) );
 		//		mi.addChild( USMenuItemPage.create( "Birting", null, USViewDefinitionOverviewPage.class ) );
@@ -60,8 +60,8 @@ public class USMenu {
 		return mi;
 	}
 
-	private static USMenuItemPage databaseMenuItem() {
-		USMenuItemPage dataTablesLevel = USMenuItemPage.create( "Gagnagrunnur", "fa fa-database sidebar-nav-icon", null );
+	public static USMenuItemContainer databaseMenuItem() {
+		USMenuItemContainer dataTablesLevel = USMenuItemContainer.create( "Gagnagrunnur", "fa fa-database sidebar-nav-icon" );
 
 		for( String categoryName : categoryNames() ) {
 			USMenuItemPage categoryLevel = USMenuItemPage.create( categoryName, null, null );

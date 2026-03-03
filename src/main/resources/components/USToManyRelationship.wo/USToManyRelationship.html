@@ -1,0 +1,23 @@
+<div>
+	<div class="btn-group"><wo:if condition="$^disableObjectSelection" negate="$true"><wo:link action="$selectObject" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-list"></i> Tengja færslu</wo:link> </wo:if><wo:link action="$createObject" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-plus-sign"></i> Stofna nýja tengda færslu</wo:link></div>
+	<wo:if condition="$destinationObjects.size">
+		<table class="table table-sm">
+			<wo:repetition list="$destinationObjects" item="$currentObject">
+				<tr>
+					<td width="100px">
+						<div class="btn-group">
+							<button class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-cog"></i> <span class="caret"></span></button>
+							<div class="dropdown-menu">
+								<wo:link action="$removeObject" class="dropdown-item"><i class="glyphicon glyphicon-remove"></i> Aftengja</wo:link>
+								<div class="dropdown-divider"></div>
+								<wo:EditLink object="$currentObject" class="dropdown-item"><i class="fa fa-pencil"></i> Opna í stjórnkerfi</wo:EditLink>
+								<wo:ViewLink object="$currentObject" class="dropdown-item"><i class="fa fa-eye"></i> Opna á vefnum</wo:ViewLink>
+							</div>
+						</div>
+					</td>
+					<td><wo:EditLink object="$currentObject"><wo:str value="$displayString" /></wo:EditLink></td>
+				</tr>
+			</wo:repetition>
+		</table>
+	</wo:if>
+</div>

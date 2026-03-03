@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="is">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<wo:stylesheet namespace="hafnium" filename="tabler/css/tabler.min.css" />
+		<wo:script namespace="ng" filename="ng-js.js" />
+		<title><wo:str value="$siteName" /></title>
+	</head>
+	<wo:AjaxUpdateContainer id="bodyUC" elementName="body" class="$bodyClass">
+		<div class="page">
+			<header class="navbar navbar-expand-md d-print-none">
+				<div class="container-xl">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+						<wo:str value="$siteName" />
+					</h1>
+				</div>
+			</header>
+			<header class="navbar-expand-md">
+				<div class="collapse navbar-collapse" id="navbar-menu">
+					<div class="navbar">
+						<div class="container-xl">
+							<ul class="navbar-nav">
+								<wo:repetition list="$menu.rootItems" item="$menuItem">
+									<wo:container elementName="li" class="$liClass">
+										<wo:if condition="$menuItem.hasChildren" negate="$true">
+											<wo:link action="$menuItemClick" class="$rootLinkClass" data-bs-toggle="$dataBsToggle" data-bs-auto-close="$dataBsAutoClose">
+												<span class="nav-link-title"><wo:str value="$menuItem.name" /></span>
+											</wo:link>
+										</wo:if>
+										<wo:if condition="$menuItem.hasChildren">
+											<wo:link href="#" class="$rootLinkClass" data-bs-toggle="$dataBsToggle" data-bs-auto-close="$dataBsAutoClose">
+												<span class="nav-link-title"><wo:str value="$menuItem.name" /></span>
+											</wo:link>
+											<wo:if condition="$menuItem.children.size">
+												<div class="dropdown-menu">
+													<wo:repetition list="$menuItem.children" item="$subItem">
+														<wo:if condition="$subItem.hasChildren" negate="$true">
+															<wo:link action="$subItemClick" class="dropdown-item"><wo:str value="$subItem.name" /></wo:link>
+														</wo:if>
+														<wo:if condition="$subItem.hasChildren">
+															<div class="dropend">
+																<wo:link class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="false"><wo:str value="$subItem.name" /></wo:link>
+																<div class="dropdown-menu dropend">
+																	<wo:repetition list="$subItem.children" item="$subSubItem">
+																		<wo:link action="$subSubItemClick" class="dropdown-item"><wo:str value="$subSubItem.name" /></wo:link>
+																	</wo:repetition>
+																</div>
+															</div>
+														</wo:if>
+													</wo:repetition>
+												</div>
+											</wo:if>
+										</wo:if>
+									</wo:container>
+								</wo:repetition>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="page-wrapper">
+				<div class="page-body">
+					<div class="container-xl">
+						<wo:content />
+					</div>
+				</div>
+				<footer class="footer footer-transparent d-print-none">
+					<div class="container-xl">
+						<div class="row text-center align-items-center flex-row-reverse">
+							<div class="col-12 col-lg-auto mt-3 mt-lg-0">
+								<ul class="list-inline list-inline-dots mb-0">
+									<li class="list-inline-item">
+										Powered by ng-hafnium
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<wo:script namespace="hafnium" filename="tabler/js/tabler.min.js" />
+	</wo:AjaxUpdateContainer>
+</html>

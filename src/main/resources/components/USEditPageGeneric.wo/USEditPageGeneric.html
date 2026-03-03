@@ -1,0 +1,21 @@
+<wo:repetition list="$attributes" item="$currentAttribute">
+	<div class="form-group mb-3">
+		<label class="form-label"><wo:str value="$currentAttribute.name" /></label>
+		<wo:if condition="$attributeIsShortString"><wo:text value="$currentAttributeValue" class="form-control" style="height: 50px" /></wo:if>
+		<wo:if condition="$attributeIsLongString"><wo:text value="$currentAttributeValue" class="form-control" style="height: 250px" /></wo:if>
+		<wo:if condition="$attributeIsInteger"><wo:textfield value="$currentAttributeValue" class="form-control" /></wo:if>
+		<wo:if condition="$attributeIsDecimal"><wo:textfield value="$currentAttributeValue" formatter="$decimalFormat" class="form-control" /></wo:if>
+		<wo:if condition="$attributeIsDate"><wo:textfield value="$currentAttributeValue" class="form-control" /></wo:if>
+		<wo:if condition="$attributeIsLocalDate"><wo:textfield value="$currentAttributeValue" class="form-control" /></wo:if>
+		<wo:if condition="$attributeIsLocalDateTime"><wo:textfield value="$currentAttributeValue" class="form-control" /></wo:if>
+		<wo:if condition="$attributeIsData"><wo:fileUpload data="$currentAttributeValue" filePath="$filename" class="form-control" /></wo:if>
+		<wo:if condition="$attributeIsBoolean"><wo:checkbox checked="$currentAttributeValue" /></wo:if>
+	</div>
+</wo:repetition>
+
+<wo:repetition list="$relationships" item="$currentRelationship">
+	<div class="form-group mb-3">
+		<label class="form-label"><wo:str value="$currentRelationship.name" /></label>
+		<div class="text-muted">[Relationship editing not yet implemented]</div>
+	</div>
+</wo:repetition>
