@@ -1,3 +1,5 @@
-<div style="position: fixed; top: 0; left: 0; z-index: 2147483647;">
-	<wo:USOperationMenu selectedObject="$selectedObject" />
-</div>
+<wo:if condition="$showViewTools">
+	<div style="position: fixed; top: 0; left: 0; z-index: 2147483647;">
+		<wo:USOperationMenu selectedObject="$selectedObject" />
+	</div>
+</wo:if>
