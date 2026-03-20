@@ -2,6 +2,7 @@ package hafnium.menu;
 
 import jambalaya.definitions.EntityDefinition;
 import ng.appserver.NGActionResults;
+import ng.appserver.NGContext;
 
 public class USMenuItemEntity extends USMenuItem {
 
@@ -28,7 +29,7 @@ public class USMenuItemEntity extends USMenuItem {
 	}
 
 	@Override
-	public NGActionResults action() {
+	public NGActionResults invokeActionInContext( NGContext context ) {
 		//		return Inspection.openListPage( EntityDefinition.get( _entityName ).entityClass() );
 		throw new RuntimeException( "Not supported" );
 	}

@@ -3,6 +3,7 @@ package hafnium.menu;
 import java.util.function.Supplier;
 
 import ng.appserver.NGActionResults;
+import ng.appserver.NGContext;
 
 public class USMenuItemActionMethod extends USMenuItem {
 
@@ -21,7 +22,7 @@ public class USMenuItemActionMethod extends USMenuItem {
 	}
 
 	@Override
-	public NGActionResults action() {
+	public NGActionResults invokeActionInContext( NGContext context ) {
 		return _supplier.get();
 	}
 }
