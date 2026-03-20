@@ -7,6 +7,7 @@ import java.util.UUID;
 import is.rebbi.core.util.Hierarchy;
 import is.rebbi.core.util.HierarchyUtilities;
 import ng.appserver.NGActionResults;
+import ng.appserver.NGContext;
 
 public abstract class USMenuItem implements Hierarchy<USMenuItem> {
 
@@ -47,7 +48,7 @@ public abstract class USMenuItem implements Hierarchy<USMenuItem> {
 		_identifier = UUID.randomUUID().toString();
 	}
 
-	public abstract NGActionResults action();
+	public abstract NGActionResults invokeActionInContext( NGContext context );
 
 	public String id() {
 		List<USMenuItem> everyParent = HierarchyUtilities.everyParentNode( this, true );

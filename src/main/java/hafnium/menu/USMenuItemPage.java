@@ -1,6 +1,8 @@
 package hafnium.menu;
 
 import ng.appserver.NGActionResults;
+import ng.appserver.NGApplication;
+import ng.appserver.NGContext;
 import ng.appserver.templating.NGComponent;
 
 public class USMenuItemPage extends USMenuItem {
@@ -29,13 +31,12 @@ public class USMenuItemPage extends USMenuItem {
 	}
 
 	@Override
-	public NGActionResults action() {
+	public NGActionResults invokeActionInContext( NGContext context ) {
 
 		if( pageClass() == null ) {
 			return null;
 		}
 
-		throw new RuntimeException( "We're missing a context" );
-		//		return NGApplication.application().pageWithName( pageClass() );
+		return NGApplication.application().pageWithName( pageClass(), context );
 	}
 }

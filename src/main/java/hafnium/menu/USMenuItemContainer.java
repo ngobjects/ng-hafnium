@@ -1,11 +1,12 @@
 package hafnium.menu;
 
 import ng.appserver.NGActionResults;
+import ng.appserver.NGContext;
 
 public class USMenuItemContainer extends USMenuItem {
 
 	@Override
-	public NGActionResults action() {
+	public NGActionResults invokeActionInContext( NGContext context ) {
 		throw new RuntimeException( "Action should never be invoked on a container item" );
 	}
 

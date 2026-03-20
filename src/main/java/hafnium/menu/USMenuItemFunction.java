@@ -24,7 +24,7 @@ public class USMenuItemFunction extends USMenuItem {
 	}
 
 	@Override
-	public NGActionResults action() {
+	public NGActionResults invokeActionInContext( NGContext context ) {
 		return _function.apply( _context );
 	}
 }

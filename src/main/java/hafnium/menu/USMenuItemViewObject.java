@@ -34,14 +34,6 @@ public class USMenuItemViewObject extends USMenuItem implements USInvokesActionI
 		return item;
 	}
 
-	/**
-	 * FIXME: This should be removed once we are using theis to invoke operations and operations have routes.
-	 */
-	@Override
-	public NGActionResults action() {
-		throw new RuntimeException( "Bla" );
-	}
-
 	@Override
 	public String url() {
 		if( _viewComponentClass != null ) {
