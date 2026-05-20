@@ -3,6 +3,7 @@ package hafnium.urls;
 import java.util.Objects;
 
 import ng.appserver.NGActionResults;
+import ng.appserver.NGRespBuilder;
 import ng.appserver.NGResponse;
 
 public class StaticURLResponse implements NGActionResults {
@@ -24,7 +25,7 @@ public class StaticURLResponse implements NGActionResults {
 	}
 
 	public static NGResponse redirectTemporary( final String targetURL ) {
-		final NGResponse response = new NGResponse();
+		final NGResponse response = NGRespBuilder.of();
 
 		response.setHeader( "location", targetURL );
 		response.setStatus( 302 );

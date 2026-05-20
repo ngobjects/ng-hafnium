@@ -1,6 +1,7 @@
 package hafnium;
 
 import ng.appserver.NGRequest;
+import ng.appserver.NGRespBuilder;
 import ng.appserver.NGResponse;
 
 public class USHTTPUtilities {
@@ -15,7 +16,7 @@ public class USHTTPUtilities {
 	 * @param targetURL The URL to redirect to
 	 */
 	public static NGResponse redirectTemporary( final String targetURL ) {
-		final NGResponse response = new NGResponse();
+		final NGResponse response = NGRespBuilder.of();
 
 		response.setStatus( 302 );
 		response.setHeader( HEADER_REDIRECT_LOCATION, targetURL );
