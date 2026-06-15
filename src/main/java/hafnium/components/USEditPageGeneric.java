@@ -118,6 +118,10 @@ public class USEditPageGeneric<E extends PersistentObject> extends USViewPage<E>
 		return CayenneUtils.attributeIsLocalDateTime( currentAttribute );
 	}
 
+	public boolean attributeIsLocalTime() {
+		return CayenneUtils.attributeIsLocalTime( currentAttribute );
+	}
+
 	public boolean attributeIsDate() {
 		return CayenneUtils.attributeIsDate( currentAttribute );
 	}

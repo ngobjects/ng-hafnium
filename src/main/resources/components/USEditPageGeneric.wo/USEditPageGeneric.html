@@ -8,6 +8,7 @@
 		<wo:if condition="$attributeIsDate"><wo:textfield value="$currentAttributeValue" class="form-control" /></wo:if>
 		<wo:if condition="$attributeIsLocalDate"><wo:USLocalDateField value="$currentAttributeValue" class="form-control" /></wo:if>
 		<wo:if condition="$attributeIsLocalDateTime"><wo:USLocalDateTimeField value="$currentAttributeValue" class="form-control" /></wo:if>
+		<wo:if condition="$attributeIsLocalTime"><wo:USLocalTimeField value="$currentAttributeValue" class="form-control" /></wo:if>
 		<wo:if condition="$attributeIsData"><wo:fileUpload data="$currentAttributeValue" filePath="$filename" class="form-control" /></wo:if>
 		<wo:if condition="$attributeIsBoolean"><wo:checkbox checked="$currentAttributeValue" /></wo:if>
 	</div>
