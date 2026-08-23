@@ -16,12 +16,12 @@ public class USUserCookies {
 	}
 
 	public static void addCookie( NGRequest request, NGResponse response, String value ) {
-		NGCookie cookie = new NGCookie( COOKIE_NAME, value, Duration.ofDays( 30 ).toSeconds() );
+		NGCookie cookie = new NGCookie( COOKIE_NAME, value, Duration.ofDays( 30 ) );
 		response.addCookie( cookie );
 	}
 
 	public static void deleteCookie( NGRequest request, NGResponse response ) {
-		NGCookie cookie = new NGCookie( COOKIE_NAME, "bye-bye", 0L );
+		NGCookie cookie = new NGCookie( COOKIE_NAME, "bye-bye", Duration.ZERO );
 		response.addCookie( cookie );
 	}
 }
