@@ -2,9 +2,9 @@ package hafnium;
 
 import java.time.Duration;
 
-import ng.appserver.NGCookie;
-import ng.appserver.NGRequest;
-import ng.appserver.NGResponse;
+import ng.appserver.http.NGCookie;
+import ng.appserver.http.NGRequest;
+import ng.appserver.http.NGResponse;
 
 public class USUserCookies {
 

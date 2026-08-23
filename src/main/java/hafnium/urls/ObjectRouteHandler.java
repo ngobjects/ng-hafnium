@@ -16,10 +16,10 @@ import org.slf4j.LoggerFactory;
 
 import hafnium.urls.Inspection.InspectionRoute;
 import jambalaya.Jambalaya;
-import ng.appserver.NGRequest;
 import ng.appserver.NGRequestHandler;
-import ng.appserver.NGRespBuilder;
-import ng.appserver.NGResponse;
+import ng.appserver.http.NGRequest;
+import ng.appserver.http.NGRespBuilder;
+import ng.appserver.http.NGResponse;
 import ng.appserver.privates.NGParsedURI;
 
 public class ObjectRouteHandler extends NGRequestHandler {

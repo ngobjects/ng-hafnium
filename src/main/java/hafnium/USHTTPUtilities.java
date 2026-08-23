@@ -1,8 +1,8 @@
 package hafnium;
 
-import ng.appserver.NGRequest;
-import ng.appserver.NGRespBuilder;
-import ng.appserver.NGResponse;
+import ng.appserver.http.NGRequest;
+import ng.appserver.http.NGRespBuilder;
+import ng.appserver.http.NGResponse;
 
 public class USHTTPUtilities {
 
