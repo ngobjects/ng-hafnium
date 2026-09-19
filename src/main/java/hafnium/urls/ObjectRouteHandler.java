@@ -18,8 +18,8 @@ import hafnium.urls.Inspection.InspectionRoute;
 import jambalaya.Jambalaya;
 import ng.appserver.NGRequestHandler;
 import ng.appserver.http.NGRequest;
-import ng.appserver.http.NGResponses;
 import ng.appserver.http.NGResponse;
+import ng.appserver.http.NGResponses;
 import ng.appserver.privates.NGParsedURI;
 
 public class ObjectRouteHandler extends NGRequestHandler {
@@ -33,7 +33,7 @@ public class ObjectRouteHandler extends NGRequestHandler {
 		// FIXME: 404 handling could really use some improvement here.
 		if( object == null ) {
 			logger.warn( "Nothing found at {}", request.uri() );
-			return NGResponses.of( "Nothing found at: " + request.uri(), 404 );
+			return NGResponses.of( 404, "Nothing found at: " + request.uri() );
 		}
 
 		return Inspection.inspectObjectInContext( object, request.context() ).generateResponse();
