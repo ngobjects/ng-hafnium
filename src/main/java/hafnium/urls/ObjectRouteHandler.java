@@ -28,7 +28,7 @@ public class ObjectRouteHandler extends NGRequestHandler {
 
 	@Override
 	public NGResponse handleRequest( final NGRequest request ) {
-		final Object object = selectedObject( request.parsedURI() );
+		final Object object = selectedObject( NGParsedURI.of( request.uri() ) );
 
 		// FIXME: 404 handling could really use some improvement here.
 		if( object == null ) {
