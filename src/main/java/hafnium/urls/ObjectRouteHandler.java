@@ -86,7 +86,7 @@ public class ObjectRouteHandler extends NGRequestHandler {
 			keyMap.put( attribute.getName(), components[i++] );
 		}
 
-		final Expression exp = ExpressionFactory.matchAllDbExp( keyMap, Expression.EQUAL_TO );
+		final Expression exp = ExpressionFactory.matchAllDbExp( keyMap );
 
 		return ObjectSelect
 				.query( PersistentObject.class, objEntityName )

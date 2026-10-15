@@ -1,6 +1,7 @@
 package hafnium.components;
 
 import org.apache.cayenne.ObjectContext;
+import org.apache.cayenne.Persistent;
 import org.apache.cayenne.PersistentObject;
 
 import hafnium.urls.HasSelectedObjectPage;
@@ -55,7 +56,7 @@ public abstract class USViewPage<E> extends USBaseComponent implements HasSelect
 	}
 
 	public NGActionResults deleteObject() {
-		((PersistentObject)selectedObject()).getObjectContext().deleteObject( selectedObject() );
+		((PersistentObject)selectedObject()).getObjectContext().deleteObject( (Persistent)selectedObject() );
 		saveChanges();
 		return returnToCallingComponent();
 	}

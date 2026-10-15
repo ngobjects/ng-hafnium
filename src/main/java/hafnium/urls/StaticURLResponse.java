@@ -3,8 +3,8 @@ package hafnium.urls;
 import java.util.Objects;
 
 import ng.appserver.NGActionResults;
-import ng.appserver.http.NGResponses;
 import ng.appserver.http.NGResponse;
+import ng.appserver.http.NGResponses;
 
 public class StaticURLResponse implements NGActionResults {
 
